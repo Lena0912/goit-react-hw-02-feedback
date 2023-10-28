@@ -1,6 +1,6 @@
 import { TitleFeedback } from './Section.styled';
 
-const Sections = ({ title, children }) => {
+ const Sections = ({ title, children }) => {
   return (
     <section>
       <TitleFeedback>

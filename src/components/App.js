@@ -25,7 +25,7 @@ export class App extends Component {
     const { good } = this.state;
     const totalFeedback = this.countTotalFeedback();
     return totalFeedback !== 0
-      ? Math.cell((good / totalFeedback) * 100) + '%'
+      ? Math.ceil((good / totalFeedback) * 100) + '%'
       : 0;
   };
   render() {
@@ -33,8 +33,8 @@ export class App extends Component {
     const isFeedback = Object.values(this.state).every(value => value === 0);
     return (
       <MainSection>
-        <Sections title='Please leave feedback'>
-          <Feedback value={values} countFeedbacks={this.countFeedback} />
+        <Sections title="Please leave feedback">
+          <Feedback values={values} countFeedback={this.countFeedback} />
         </Sections>
 
         {!isFeedback ? (
@@ -42,16 +42,14 @@ export class App extends Component {
             <Statistic
               state={this.state}
               countTotalFeedback={this.countTotalFeedback}
-              countPositiveFeedback={this.countPositiveFeedbackPercentage} />
+              countPositiveFeedback={this.countPositiveFeedbackPercentage}
+            />
           </Sections>
         ) : (
           <Sections>
             <Notification message="Click the button and share your experience using this app." />
-
           </Sections>
-        )
-        }
-        
+        )}
       </MainSection>
     );
   }

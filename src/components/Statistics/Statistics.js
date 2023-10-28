@@ -7,7 +7,7 @@ import {
 const Statistic = ({
     state: { good, neutral, bad },
     countTotalFeedback,
-    contPositiveFeedback,
+    countPositiveFeedback,
 }) => {
     return (
       <StatisticContainer>
@@ -23,9 +23,9 @@ const Statistic = ({
         <StatisticName>
           Total: <StatisticResult>{countTotalFeedback()}</StatisticResult>
         </StatisticName>
-            {/* <StatisticName>
-                PositiveFeedback: <StatisticResult>{countPositiveFeedback()}</StatisticResult>
-        </StatisticName> */}
+            <StatisticName>
+                Positive feedback: <StatisticResult>{countPositiveFeedback()}</StatisticResult>
+        </StatisticName>
       </StatisticContainer>
     );
 };
